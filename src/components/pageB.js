@@ -64,7 +64,7 @@ class PageB extends Component<Props> {
                         Welcome to React Native!
                     </Text>
                     <Text style={styles.instructions}>
-                        This is a page A
+                        This is a page B
                     </Text>
                     <Text style={{fontSize:30, color:'red'}}>
                         Page Is {this.props.pageStatus}
