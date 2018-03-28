@@ -18,11 +18,6 @@ import * as changeCounter from "../actions/index";
 
 type Props = {};
 class PageA extends Component<Props> {
-    onPress = () => {
-        Alert.alert('Now the count in component C also will be incremented', '')
-        this.props.increment()
-        this.props.navigation.navigate('Page_B')
-    }
     render() {
         if(this.props.pageStatus === 'Enabled')
         {
@@ -47,9 +42,16 @@ class PageA extends Component<Props> {
                     </View>
                     <View  style={{marginTop:10, width:300}}>
                         <Button
-                            onPress={this.onPress}
+                            onPress={()=>{this.props.navigation.navigate('Page_B')}}
                             color="#841584"
                             title="GO TO PAGE B"
+                        />
+                    </View>
+                    <View  style={{marginTop:10, width:300}}>
+                        <Button
+                            onPress={()=>{this.props.increment()}}
+                            color="grey"
+                            title="Increment Counter at Component C"
                         />
                     </View>
 
